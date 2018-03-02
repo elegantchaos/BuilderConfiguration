@@ -6,7 +6,7 @@
 
 import Foundation
 
-class BasicConfigure {
+public class BasicConfigure {
   let configuration : [String:String]
 
   public init(dictionary: [String:String]) {
