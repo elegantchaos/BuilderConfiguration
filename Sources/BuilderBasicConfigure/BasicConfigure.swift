@@ -7,9 +7,9 @@
 import Foundation
 
 public class BasicConfigure {
-  let configuration : [String:String]
+  let configuration : [String:Any]
 
-  public init(dictionary: [String:String]) {
+  public init(dictionary: [String:Any]) {
     self.configuration = dictionary
   }
 
