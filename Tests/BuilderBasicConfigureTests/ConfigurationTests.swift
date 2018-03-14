@@ -12,14 +12,14 @@ class ConfigurationTests: XCTestCase {
     func testConfiguration() throws {
         let test = Configuration(
             settings: Settings(schemes: []),
-            schemes: [
-                .scheme(
+            actions: [
+                .action(
                     name: "build", phases: [
                         .phase(name:"prepare", tool: "protobuf", arguments: ["Source/*.proto"]),
                         .phase(name:"build", tool: "build", arguments: ["myProduct"]),
                         .phase(name:"package", tool: "package", arguments: ["myProduct.app"])
                     ]),
-                .scheme(
+                .action(
                     name: "test", phases: [
                         .phase(name:"testing", tool: "test", arguments: ["myProduct"]),
                         ]
@@ -29,7 +29,7 @@ class ConfigurationTests: XCTestCase {
 
         let expected = """
                     {
-                      "schemes" : {
+                      "actions" : {
                         "build" : [
                           {
                             "arguments" : [

@@ -23,7 +23,7 @@ public struct Configuration {
 
     }
 
-    public struct Scheme {
+    public struct Action {
         let name : String
         let value : [[String:Any]]
 
@@ -32,8 +32,8 @@ public struct Configuration {
             self.value = phases.map { $0.value }
         }
 
-        public static func scheme(name: String, phases: [Phase]) -> Scheme {
-            return Scheme(name: name, phases: phases)
+        public static func action(name: String, phases: [Phase]) -> Action {
+            return Action(name: name, phases: phases)
         }
     }
 
@@ -41,14 +41,14 @@ public struct Configuration {
         self.value = dictionary
     }
 
-    public init(settings : Settings, schemes : [Scheme]) {
-        var schemesValue : [String:Any] = [:]
-        for scheme in schemes {
-            schemesValue[scheme.name] = scheme.value
+    public init(settings : Settings, actions : [Action]) {
+        var actionsValue : [String:Any] = [:]
+        for action in actions {
+            actionsValue[action.name] = action.value
         }
         self.value = [
           "settings" : settings.value,
-          "schemes" : schemesValue
+          "actions" : actionsValue
         ]
     }
 
