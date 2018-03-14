@@ -21,5 +21,8 @@ let package = Package(
         .target(
             name: "BuilderBasicConfigure",
             dependencies: []),
+        .testTarget(
+            name: "BuilderBasicConfigureTests",
+            dependencies: ["BuilderBasicConfigure"]),
     ]
 )
