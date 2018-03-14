@@ -28,47 +28,52 @@ class ConfigurationTests: XCTestCase {
         )
 
         let expected = """
-                {
-                  "build" : {
-                    "name" : "build",
-                    "phases" : [
-                      {
-                        "arguments" : [
-                          "Source\\/*.proto"
-                        ],
-                        "name" : "prepare",
-                        "tool" : "protobuf"
-                      },
-                      {
-                        "arguments" : [
-                          "myProduct"
-                        ],
+                  {
+                    "schemes" : {
+                      "build" : {
                         "name" : "build",
-                        "tool" : "build"
+                        "phases" : [
+                          {
+                            "arguments" : [
+                              "Source\\/*.proto"
+                            ],
+                            "name" : "prepare",
+                            "tool" : "protobuf"
+                          },
+                          {
+                            "arguments" : [
+                              "myProduct"
+                            ],
+                            "name" : "build",
+                            "tool" : "build"
+                          },
+                          {
+                            "arguments" : [
+                              "myProduct.app"
+                            ],
+                            "name" : "package",
+                            "tool" : "package"
+                          }
+                        ]
                       },
-                      {
-                        "arguments" : [
-                          "myProduct.app"
-                        ],
-                        "name" : "package",
-                        "tool" : "package"
+                      "test" : {
+                        "name" : "test",
+                        "phases" : [
+                          {
+                            "arguments" : [
+                              "myProduct"
+                            ],
+                            "name" : "testing",
+                            "tool" : "test"
+                          }
+                        ]
                       }
-                    ]
-                  },
-                  "test" : {
-                    "name" : "test",
-                    "phases" : [
-                      {
-                        "arguments" : [
-                          "myProduct"
-                        ],
-                        "name" : "testing",
-                        "tool" : "test"
-                      }
-                    ]
+                    },
+                    "settings" : {
+
+                    }
                   }
-                }
-                """
+                  """
 
         XCTAssertEqual(test.testJSON, expected)
 
