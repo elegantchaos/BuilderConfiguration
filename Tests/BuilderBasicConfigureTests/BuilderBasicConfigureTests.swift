@@ -11,32 +11,7 @@ import XCTest
 
 class BuilderTests: XCTestCase {
     
-    /*
-     let settings : [String:Any] = [
-     "common" :    [
-     "common" : [],
-     "c" : [],
-     "cpp" : [],
-     "swift" : [],
-     "inherits" : [
-     ["name": "mac", "platform" : "macOS"],
-     ["name": "debug", "configuration" : "debug"]
-     ]
-     ],
-     "mac" :    [
-     "swift" : [
-     "target", "x86_64-apple-macosx10.12"
-     ]
-     ],
-     "debug" : [
-     "swift" : [
-     "Onone"
-     ]
-     ]
-     ]
-     */
-    
-    func testCompilerSetting() throws {
+    func testSettings() throws {
         let test = Settings(schemes: [
             .scheme(
                 name: "common",
@@ -92,9 +67,74 @@ class BuilderTests: XCTestCase {
             }
             """
         
-        XCTAssertEqual(test.json, expected)
+        XCTAssertEqual(test.testJSON, expected)
         
     }
-    
+ 
+    func testConfiguration() throws {
+        let test = Configuration(
+            settings: Settings(schemes: []),
+            schemes: [
+                .scheme(
+                    name: "build", phases: [
+                        .phase(name:"prepare", tool: "protobuf", arguments: ["Source/*.proto"]),
+                        .phase(name:"build", tool: "build", arguments: ["myProduct"]),
+                        .phase(name:"package", tool: "package", arguments: ["myProduct.app"])
+                    ]),
+                .scheme(
+                    name: "test", phases: [
+                        .phase(name:"testing", tool: "test", arguments: ["myProduct"]),
+                        ]
+                ),
+                ]
+        )
+        
+        let expected = """
+                {
+                  "build" : {
+                    "name" : "build",
+                    "phases" : [
+                      {
+                        "arguments" : [
+                          "Source\\/*.proto"
+                        ],
+                        "name" : "prepare",
+                        "tool" : "protobuf"
+                      },
+                      {
+                        "arguments" : [
+                          "myProduct"
+                        ],
+                        "name" : "build",
+                        "tool" : "build"
+                      },
+                      {
+                        "arguments" : [
+                          "myProduct.app"
+                        ],
+                        "name" : "package",
+                        "tool" : "package"
+                      }
+                    ]
+                  },
+                  "test" : {
+                    "name" : "test",
+                    "phases" : [
+                      {
+                        "arguments" : [
+                          "myProduct"
+                        ],
+                        "name" : "testing",
+                        "tool" : "test"
+                      }
+                    ]
+                  }
+                }
+                """
+        
+        XCTAssertEqual(test.testJSON, expected)
+        
+    }
+
 }
 
