@@ -17,8 +17,20 @@ public struct Configuration {
             self.value = ["name": name, "tool": tool, "arguments": arguments]
         }
 
-        public static func phase(name: String, tool: String, arguments: [String]) -> Phase {
-            return Phase(name: name, tool: tool, arguments: arguments)
+        public static func toolPhase(name: String, tool: String, arguments: [String]? = nil) -> Phase {
+            return Phase(name: name, tool: tool, arguments: arguments ?? [])
+        }
+
+        public static func buildPhase(name: String, target: String, arguments: [String]? = nil) -> Phase {
+            return Phase(name: name, tool: "build", arguments: [target] + (arguments ?? []))
+        }
+
+        public static func testPhase(name: String, target: String, arguments: [String]? = nil) -> Phase {
+            return Phase(name: name, tool: "test", arguments: [target] + (arguments ?? []))
+        }
+
+        public static func actionPhase(name: String, action: String, arguments: [String]? = nil) -> Phase {
+            return Phase(name: name, tool: "action", arguments: [action] + (arguments ?? []))
         }
 
     }
@@ -41,7 +53,7 @@ public struct Configuration {
         self.value = dictionary
     }
 
-    public init(settings : Settings, actions : [Action]) {
+    public init(settings : Settings = Settings(), actions : [Action]) {
         var actionsValue : [String:Any] = [:]
         for action in actions {
             actionsValue[action.name] = action.value

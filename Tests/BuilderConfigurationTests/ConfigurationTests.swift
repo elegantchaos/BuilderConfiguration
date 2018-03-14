@@ -11,17 +11,16 @@ import XCTest
 class ConfigurationTests: XCTestCase {
     func testConfiguration() throws {
         let test = Configuration(
-            settings: Settings(schemes: []),
             actions: [
                 .action(
                     name: "build", phases: [
-                        .phase(name:"prepare", tool: "protobuf", arguments: ["Source/*.proto"]),
-                        .phase(name:"build", tool: "build", arguments: ["myProduct"]),
-                        .phase(name:"package", tool: "package", arguments: ["myProduct.app"])
+                        .toolPhase(name:"prepare", tool: "protobuf", arguments: ["Source/*.proto"]),
+                        .buildPhase(name:"build", target: "myProduct"),
+                        .toolPhase(name:"package", tool: "package", arguments: ["myProduct.app"])
                     ]),
                 .action(
                     name: "test", phases: [
-                        .phase(name:"testing", tool: "test", arguments: ["myProduct"]),
+                        .testPhase(name:"testing", target: "myLibrary"),
                         ]
                 ),
                 ]
@@ -56,7 +55,7 @@ class ConfigurationTests: XCTestCase {
                         "test" : [
                           {
                             "arguments" : [
-                              "myProduct"
+                              "myLibrary"
                             ],
                             "name" : "testing",
                             "tool" : "test"

@@ -57,7 +57,7 @@ public struct Settings {
         
     }
     
-    public init(schemes : [Scheme]) {
+    public init(schemes : [Scheme] = []) {
         var info : [String:Any] = [:]
         for scheme in schemes {
             info[scheme.name] = scheme.value
