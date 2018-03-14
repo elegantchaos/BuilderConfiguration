@@ -11,22 +11,90 @@ import XCTest
 
 class BuilderTests: XCTestCase {
     
-    @available(macOS 10.13, *) func testCompilerSetting() throws {
+    /*
+     let settings : [String:Any] = [
+     "common" :    [
+     "common" : [],
+     "c" : [],
+     "cpp" : [],
+     "swift" : [],
+     "inherits" : [
+     ["name": "mac", "platform" : "macOS"],
+     ["name": "debug", "configuration" : "debug"]
+     ]
+     ],
+     "mac" :    [
+     "swift" : [
+     "target", "x86_64-apple-macosx10.12"
+     ]
+     ],
+     "debug" : [
+     "swift" : [
+     "Onone"
+     ]
+     ]
+     ]
+     */
+    
+    func testCompilerSetting() throws {
         let test = Settings(schemes: [
-            .scheme(name: "test")
+            .scheme(
+                name: "common",
+                swift: ["Dexample"],
+                inherits: [
+                    .scheme(name: "mac", filter: ["macOS"]),
+                    .scheme(name: "debug", filter: ["debug"])
+                ]
+            ),
+            .scheme(
+                name: "mac",
+                swift: ["target", "x86_64-apple-macosx10.12"]
+            ),
+            .scheme(
+                name: "debug",
+                swift: ["Onone"]
+            )
             ]
         )
         
         let expected = """
-{"test":{}}
-"""
+            {
+              "common" : {
+                "inherits" : [
+                  {
+                    "filter" : [
+                      "macOS"
+                    ],
+                    "name" : "mac"
+                  },
+                  {
+                    "filter" : [
+                      "debug"
+                    ],
+                    "name" : "debug"
+                  }
+                ],
+                "swift" : [
+                  "Dexample"
+                ]
+              },
+              "debug" : {
+                "swift" : [
+                  "Onone"
+                ]
+              },
+              "mac" : {
+                "swift" : [
+                  "target",
+                  "x86_64-apple-macosx10.12"
+                ]
+              }
+            }
+            """
         
-        let encoded = try JSONSerialization.data(withJSONObject: test.value, options: .sortedKeys)
-        if let json = String(data: encoded, encoding: String.Encoding.utf8) {
-            XCTAssertEqual(json, expected)
-        }
+        XCTAssertEqual(test.json, expected)
         
     }
-
+    
 }
 
