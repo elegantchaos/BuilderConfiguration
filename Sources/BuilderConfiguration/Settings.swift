@@ -45,6 +45,16 @@ public struct Settings {
             self.value = info
         }
         
+        public static func baseScheme(common: [String]? = nil,
+            c: [String]? = nil,
+            cpp: [String]? = nil,
+            swift: [String]? = nil,
+            linker: [String]? = nil,
+            inherits: [Inheritance]? = nil) -> Scheme {
+
+            return Scheme(name: "«base»", common: common, c: c, cpp: cpp, swift: swift, linker: linker, inherits: inherits)
+        }
+        
         public static func scheme(name: String,
                                   common: [String]? = nil,
                                   c: [String]? = nil,
