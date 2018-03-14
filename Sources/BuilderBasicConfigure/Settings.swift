@@ -1,38 +1,15 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-// Created by Sam Deane, 28/02/2018.
+// Created by Sam Deane, 14/03/2018.
 // All code (c) 2018 - present day, Elegant Chaos Limited.
 // For licensing terms, see http://elegantchaos.com/license/liberal/.
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-import Foundation
-
-
-func asJSON(value : Any, compact : Bool) -> String {
-    var options : JSONSerialization.WritingOptions = []
-    if #available(macOS 10.13, *) {
-        options.insert(.sortedKeys)
-    }
-    if !compact {
-        options.insert(.prettyPrinted)
-    }
-    
-    do {
-        let encoded = try JSONSerialization.data(withJSONObject: value, options: options)
-        if let json = String(data: encoded, encoding: String.Encoding.utf8) {
-            return json
-        }
-    } catch {
-    }
-    
-    return ""
-}
 
 public struct Settings {
     public let value : [String:Any]
     
     var json : String { get { return asJSON(value: value, compact: true) } }
     var testJSON : String { get { return asJSON(value: value, compact: false) } }
-
+    
     public struct Inheritance {
         let value : [String:Any]
         
@@ -87,66 +64,5 @@ public struct Settings {
         }
         self.value = info
     }
-
-}
-
-public struct Configuration {
-    public let value : [String:Any]
-
-    var json : String { get { return asJSON(value: value, compact: true) } }
-    var testJSON : String { get { return asJSON(value: value, compact: false) } }
-
-    public struct Phase {
-        let value : [String:Any]
-
-        init(name: String, tool: String, arguments: [String]) {
-            self.value = ["name": name, "tool": tool, "arguments": arguments]
-        }
-
-        public static func phase(name: String, tool: String, arguments: [String]) -> Phase {
-            return Phase(name: name, tool: tool, arguments: arguments)
-        }
-
-    }
     
-    public struct Scheme {
-        let name : String
-        let value : [String:Any]
-        
-        init(name: String, phases: [Phase]) {
-            self.name = name
-            self.value = [
-                "name": name,
-                "phases": phases.map { $0.value }
-            ]
-        }
-        
-        public static func scheme(name: String, phases: [Phase]) -> Scheme {
-            return Scheme(name: name, phases: phases)
-        }
-    }
-
-    public init(settings : Settings, schemes : [Scheme]) {
-        var info : [String:Any] = [:]
-        for scheme in schemes {
-            info[scheme.name] = scheme.value
-        }
-        self.value = info
-    }
-    
-
-}
-public class BasicConfigure {
-    let configuration : [String:Any]
-    
-    public init(dictionary: [String:Any]) {
-        self.configuration = dictionary
-    }
-    
-    public func run() throws {
-        let encoded = try JSONSerialization.data(withJSONObject: configuration, options: .prettyPrinted)
-        if let json = String(data: encoded, encoding: String.Encoding.utf8) {
-            print(json)
-        }
-    }
 }

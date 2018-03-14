@@ -8,69 +8,7 @@
 import XCTest
 @testable import BuilderBasicConfigure
 
-
-class BuilderTests: XCTestCase {
-    
-    func testSettings() throws {
-        let test = Settings(schemes: [
-            .scheme(
-                name: "common",
-                swift: ["Dexample"],
-                inherits: [
-                    .scheme(name: "mac", filter: ["macOS"]),
-                    .scheme(name: "debug", filter: ["debug"])
-                ]
-            ),
-            .scheme(
-                name: "mac",
-                swift: ["target", "x86_64-apple-macosx10.12"]
-            ),
-            .scheme(
-                name: "debug",
-                swift: ["Onone"]
-            )
-            ]
-        )
-        
-        let expected = """
-            {
-              "common" : {
-                "inherits" : [
-                  {
-                    "filter" : [
-                      "macOS"
-                    ],
-                    "name" : "mac"
-                  },
-                  {
-                    "filter" : [
-                      "debug"
-                    ],
-                    "name" : "debug"
-                  }
-                ],
-                "swift" : [
-                  "Dexample"
-                ]
-              },
-              "debug" : {
-                "swift" : [
-                  "Onone"
-                ]
-              },
-              "mac" : {
-                "swift" : [
-                  "target",
-                  "x86_64-apple-macosx10.12"
-                ]
-              }
-            }
-            """
-        
-        XCTAssertEqual(test.testJSON, expected)
-        
-    }
- 
+class ConfigurationTests: XCTestCase {
     func testConfiguration() throws {
         let test = Configuration(
             settings: Settings(schemes: []),
@@ -88,7 +26,7 @@ class BuilderTests: XCTestCase {
                 ),
                 ]
         )
-        
+
         let expected = """
                 {
                   "build" : {
@@ -131,10 +69,13 @@ class BuilderTests: XCTestCase {
                   }
                 }
                 """
-        
+
         XCTAssertEqual(test.testJSON, expected)
-        
+
     }
 
-}
+    static var allTests = [
+        ("testConfiguration", testConfiguration),
+    ]
 
+}
