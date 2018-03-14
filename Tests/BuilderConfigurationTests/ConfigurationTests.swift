@@ -6,7 +6,7 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 import XCTest
-@testable import BuilderBasicConfigure
+@testable import BuilderConfiguration
 
 class ConfigurationTests: XCTestCase {
     func testConfiguration() throws {

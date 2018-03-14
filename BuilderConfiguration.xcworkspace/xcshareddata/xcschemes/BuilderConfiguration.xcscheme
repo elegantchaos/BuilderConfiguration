@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BuilderBasicConfigure::BuilderBasicConfigure"
-               BuildableName = "BuilderBasicConfigure.framework"
-               BlueprintName = "BuilderBasicConfigure"
-               ReferencedContainer = "container:BuilderBasicConfigure.xcodeproj">
+               BlueprintIdentifier = "BuilderConfiguration::BuilderConfiguration"
+               BuildableName = "BuilderConfiguration.framework"
+               BlueprintName = "BuilderConfiguration"
+               ReferencedContainer = "container:BuilderConfiguration.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BuilderBasicConfigure::BuilderBasicConfigureTests"
-               BuildableName = "BuilderBasicConfigureTests.xctest"
-               BlueprintName = "BuilderBasicConfigureTests"
-               ReferencedContainer = "container:BuilderBasicConfigure.xcodeproj">
+               BlueprintIdentifier = "BuilderConfiguration::BuilderConfigurationTests"
+               BuildableName = "BuilderConfigurationTests.xctest"
+               BlueprintName = "BuilderConfigurationTests"
+               ReferencedContainer = "container:BuilderConfiguration.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,10 +55,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BuilderBasicConfigure::BuilderBasicConfigure"
-            BuildableName = "BuilderBasicConfigure.framework"
-            BlueprintName = "BuilderBasicConfigure"
-            ReferencedContainer = "container:BuilderBasicConfigure.xcodeproj">
+            BlueprintIdentifier = "BuilderConfiguration::BuilderConfiguration"
+            BuildableName = "BuilderConfiguration.framework"
+            BlueprintName = "BuilderConfiguration"
+            ReferencedContainer = "container:BuilderConfiguration.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>

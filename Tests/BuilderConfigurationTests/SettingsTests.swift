@@ -6,7 +6,7 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 import XCTest
-@testable import BuilderBasicConfigure
+@testable import BuilderConfiguration
 
 
 class SettingsTests: XCTestCase {
@@ -71,8 +71,8 @@ class SettingsTests: XCTestCase {
 
     }
 
-  static var allTests = [
-      ("testSettings", testSettings),
-  ]
+    static var allTests = [
+        ("testSettings", testSettings),
+    ]
 
 }

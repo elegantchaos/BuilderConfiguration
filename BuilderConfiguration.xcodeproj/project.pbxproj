@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		"BuilderBasicConfigure::BuilderBasicConfigurePackageTests::ProductTarget" /* BuilderBasicConfigurePackageTests */ = {
+		"BuilderConfiguration::BuilderConfigurationPackageTests::ProductTarget" /* BuilderConfigurationPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_36 /* Build configuration list for PBXAggregateTarget "BuilderBasicConfigurePackageTests" */;
+			buildConfigurationList = OBJ_36 /* Build configuration list for PBXAggregateTarget "BuilderConfigurationPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
 				OBJ_39 /* PBXTargetDependency */,
 			);
-			name = BuilderBasicConfigurePackageTests;
-			productName = BuilderBasicConfigurePackageTests;
+			name = BuilderConfigurationPackageTests;
+			productName = BuilderConfigurationPackageTests;
 		};
 /* End PBXAggregateTarget section */
 
@@ -27,34 +27,34 @@
 		OBJ_34 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_45 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ConfigurationTests.swift */; };
 		OBJ_46 /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* SettingsTests.swift */; };
-		OBJ_48 /* BuilderBasicConfigure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BuilderBasicConfigure::BuilderBasicConfigure::Product" /* BuilderBasicConfigure.framework */; };
+		OBJ_48 /* BuilderConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BuilderConfiguration::BuilderConfiguration::Product" /* BuilderConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		225664A12059769300BE2D50 /* PBXContainerItemProxy */ = {
+		225664A320598F5300BE2D50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "BuilderBasicConfigure::BuilderBasicConfigure";
-			remoteInfo = BuilderBasicConfigure;
+			remoteGlobalIDString = "BuilderConfiguration::BuilderConfiguration";
+			remoteInfo = BuilderConfiguration;
 		};
-		225664A22059769400BE2D50 /* PBXContainerItemProxy */ = {
+		225664A420598F5300BE2D50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "BuilderBasicConfigure::BuilderBasicConfigureTests";
-			remoteInfo = BuilderBasicConfigureTests;
+			remoteGlobalIDString = "BuilderConfiguration::BuilderConfigurationTests";
+			remoteInfo = BuilderConfigurationTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		"BuilderBasicConfigure::BuilderBasicConfigure::Product" /* BuilderBasicConfigure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BuilderBasicConfigure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"BuilderBasicConfigure::BuilderBasicConfigureTests::Product" /* BuilderBasicConfigureTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = BuilderBasicConfigureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"BuilderConfiguration::BuilderConfiguration::Product" /* BuilderConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BuilderConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"BuilderConfiguration::BuilderConfigurationTests::Product" /* BuilderConfigurationTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = BuilderConfigurationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		OBJ_14 /* ConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 		OBJ_15 /* SettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
-		OBJ_16 /* BuilderBasicConfigure.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = BuilderBasicConfigure.xcworkspace; sourceTree = SOURCE_ROOT; };
+		OBJ_16 /* BuilderConfiguration.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = BuilderConfiguration.xcworkspace; sourceTree = SOURCE_ROOT; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_48 /* BuilderBasicConfigure.framework in Frameworks */,
+				OBJ_48 /* BuilderConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,26 +81,26 @@
 		OBJ_12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_13 /* BuilderBasicConfigureTests */,
+				OBJ_13 /* BuilderConfigurationTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_13 /* BuilderBasicConfigureTests */ = {
+		OBJ_13 /* BuilderConfigurationTests */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_14 /* ConfigurationTests.swift */,
 				OBJ_15 /* SettingsTests.swift */,
 			);
-			name = BuilderBasicConfigureTests;
-			path = Tests/BuilderBasicConfigureTests;
+			name = BuilderConfigurationTests;
+			path = Tests/BuilderConfigurationTests;
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_17 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"BuilderBasicConfigure::BuilderBasicConfigureTests::Product" /* BuilderBasicConfigureTests.xctest */,
-				"BuilderBasicConfigure::BuilderBasicConfigure::Product" /* BuilderBasicConfigure.framework */,
+				"BuilderConfiguration::BuilderConfigurationTests::Product" /* BuilderConfigurationTests.xctest */,
+				"BuilderConfiguration::BuilderConfiguration::Product" /* BuilderConfiguration.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -111,7 +111,7 @@
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_12 /* Tests */,
-				OBJ_16 /* BuilderBasicConfigure.xcworkspace */,
+				OBJ_16 /* BuilderConfiguration.xcworkspace */,
 				OBJ_17 /* Products */,
 			);
 			name = "";
@@ -120,28 +120,28 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* BuilderBasicConfigure */,
+				OBJ_8 /* BuilderConfiguration */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_8 /* BuilderBasicConfigure */ = {
+		OBJ_8 /* BuilderConfiguration */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* Configuration.swift */,
 				OBJ_10 /* Settings.swift */,
 				OBJ_11 /* Utilities.swift */,
 			);
-			name = BuilderBasicConfigure;
-			path = Sources/BuilderBasicConfigure;
+			name = BuilderConfiguration;
+			path = Sources/BuilderConfiguration;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"BuilderBasicConfigure::BuilderBasicConfigure" /* BuilderBasicConfigure */ = {
+		"BuilderConfiguration::BuilderConfiguration" /* BuilderConfiguration */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_21 /* Build configuration list for PBXNativeTarget "BuilderBasicConfigure" */;
+			buildConfigurationList = OBJ_21 /* Build configuration list for PBXNativeTarget "BuilderConfiguration" */;
 			buildPhases = (
 				OBJ_24 /* Sources */,
 				OBJ_28 /* Frameworks */,
@@ -150,14 +150,14 @@
 			);
 			dependencies = (
 			);
-			name = BuilderBasicConfigure;
-			productName = BuilderBasicConfigure;
-			productReference = "BuilderBasicConfigure::BuilderBasicConfigure::Product" /* BuilderBasicConfigure.framework */;
+			name = BuilderConfiguration;
+			productName = BuilderConfiguration;
+			productReference = "BuilderConfiguration::BuilderConfiguration::Product" /* BuilderConfiguration.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"BuilderBasicConfigure::BuilderBasicConfigureTests" /* BuilderBasicConfigureTests */ = {
+		"BuilderConfiguration::BuilderConfigurationTests" /* BuilderConfigurationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_41 /* Build configuration list for PBXNativeTarget "BuilderBasicConfigureTests" */;
+			buildConfigurationList = OBJ_41 /* Build configuration list for PBXNativeTarget "BuilderConfigurationTests" */;
 			buildPhases = (
 				OBJ_44 /* Sources */,
 				OBJ_47 /* Frameworks */,
@@ -167,14 +167,14 @@
 			dependencies = (
 				OBJ_49 /* PBXTargetDependency */,
 			);
-			name = BuilderBasicConfigureTests;
-			productName = BuilderBasicConfigureTests;
-			productReference = "BuilderBasicConfigure::BuilderBasicConfigureTests::Product" /* BuilderBasicConfigureTests.xctest */;
+			name = BuilderConfigurationTests;
+			productName = BuilderConfigurationTests;
+			productReference = "BuilderConfiguration::BuilderConfigurationTests::Product" /* BuilderConfigurationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		"BuilderBasicConfigure::SwiftPMPackageDescription" /* BuilderBasicConfigurePackageDescription */ = {
+		"BuilderConfiguration::SwiftPMPackageDescription" /* BuilderConfigurationPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_30 /* Build configuration list for PBXNativeTarget "BuilderBasicConfigurePackageDescription" */;
+			buildConfigurationList = OBJ_30 /* Build configuration list for PBXNativeTarget "BuilderConfigurationPackageDescription" */;
 			buildPhases = (
 				OBJ_33 /* Sources */,
 			);
@@ -182,8 +182,8 @@
 			);
 			dependencies = (
 			);
-			name = BuilderBasicConfigurePackageDescription;
-			productName = BuilderBasicConfigurePackageDescription;
+			name = BuilderConfigurationPackageDescription;
+			productName = BuilderConfigurationPackageDescription;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -194,7 +194,7 @@
 			attributes = {
 				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "BuilderBasicConfigure" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "BuilderConfiguration" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -206,10 +206,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"BuilderBasicConfigure::BuilderBasicConfigure" /* BuilderBasicConfigure */,
-				"BuilderBasicConfigure::SwiftPMPackageDescription" /* BuilderBasicConfigurePackageDescription */,
-				"BuilderBasicConfigure::BuilderBasicConfigurePackageTests::ProductTarget" /* BuilderBasicConfigurePackageTests */,
-				"BuilderBasicConfigure::BuilderBasicConfigureTests" /* BuilderBasicConfigureTests */,
+				"BuilderConfiguration::BuilderConfiguration" /* BuilderConfiguration */,
+				"BuilderConfiguration::SwiftPMPackageDescription" /* BuilderConfigurationPackageDescription */,
+				"BuilderConfiguration::BuilderConfigurationPackageTests::ProductTarget" /* BuilderConfigurationPackageTests */,
+				"BuilderConfiguration::BuilderConfigurationTests" /* BuilderConfigurationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,13 +247,13 @@
 /* Begin PBXTargetDependency section */
 		OBJ_39 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "BuilderBasicConfigure::BuilderBasicConfigureTests" /* BuilderBasicConfigureTests */;
-			targetProxy = 225664A22059769400BE2D50 /* PBXContainerItemProxy */;
+			target = "BuilderConfiguration::BuilderConfigurationTests" /* BuilderConfigurationTests */;
+			targetProxy = 225664A420598F5300BE2D50 /* PBXContainerItemProxy */;
 		};
 		OBJ_49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "BuilderBasicConfigure::BuilderBasicConfigure" /* BuilderBasicConfigure */;
-			targetProxy = 225664A12059769300BE2D50 /* PBXContainerItemProxy */;
+			target = "BuilderConfiguration::BuilderConfiguration" /* BuilderConfiguration */;
+			targetProxy = 225664A320598F5300BE2D50 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -267,17 +267,17 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = BuilderBasicConfigure.xcodeproj/BuilderBasicConfigure_Info.plist;
+				INFOPLIST_FILE = BuilderConfiguration.xcodeproj/BuilderConfiguration_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = BuilderBasicConfigure;
+				PRODUCT_BUNDLE_IDENTIFIER = BuilderConfiguration;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = BuilderBasicConfigure;
+				TARGET_NAME = BuilderConfiguration;
 			};
 			name = Debug;
 		};
@@ -290,17 +290,17 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = BuilderBasicConfigure.xcodeproj/BuilderBasicConfigure_Info.plist;
+				INFOPLIST_FILE = BuilderConfiguration.xcodeproj/BuilderConfiguration_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = BuilderBasicConfigure;
+				PRODUCT_BUNDLE_IDENTIFIER = BuilderConfiguration;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = BuilderBasicConfigure;
+				TARGET_NAME = BuilderConfiguration;
 			};
 			name = Release;
 		};
@@ -385,13 +385,13 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = BuilderBasicConfigure.xcodeproj/BuilderBasicConfigureTests_Info.plist;
+				INFOPLIST_FILE = BuilderConfiguration.xcodeproj/BuilderConfigurationTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = BuilderBasicConfigureTests;
+				TARGET_NAME = BuilderConfigurationTests;
 			};
 			name = Debug;
 		};
@@ -404,20 +404,20 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = BuilderBasicConfigure.xcodeproj/BuilderBasicConfigureTests_Info.plist;
+				INFOPLIST_FILE = BuilderConfiguration.xcodeproj/BuilderConfigurationTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = BuilderBasicConfigureTests;
+				TARGET_NAME = BuilderConfigurationTests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_2 /* Build configuration list for PBXProject "BuilderBasicConfigure" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "BuilderConfiguration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
@@ -426,7 +426,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_21 /* Build configuration list for PBXNativeTarget "BuilderBasicConfigure" */ = {
+		OBJ_21 /* Build configuration list for PBXNativeTarget "BuilderConfiguration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_22 /* Debug */,
@@ -435,7 +435,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_30 /* Build configuration list for PBXNativeTarget "BuilderBasicConfigurePackageDescription" */ = {
+		OBJ_30 /* Build configuration list for PBXNativeTarget "BuilderConfigurationPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_31 /* Debug */,
@@ -444,7 +444,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_36 /* Build configuration list for PBXAggregateTarget "BuilderBasicConfigurePackageTests" */ = {
+		OBJ_36 /* Build configuration list for PBXAggregateTarget "BuilderConfigurationPackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_37 /* Debug */,
@@ -453,7 +453,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_41 /* Build configuration list for PBXNativeTarget "BuilderBasicConfigureTests" */ = {
+		OBJ_41 /* Build configuration list for PBXNativeTarget "BuilderConfigurationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_42 /* Debug */,
