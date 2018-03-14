@@ -34,22 +34,22 @@ class ConfigurationTests: XCTestCase {
                             "arguments" : [
                               "Source\\/*.proto"
                             ],
-                            "name" : "prepare",
-                            "tool" : "protobuf"
+                            "command" : "protobuf",
+                            "name" : "prepare"
                           },
                           {
                             "arguments" : [
                               "myProduct"
                             ],
-                            "name" : "build",
-                            "tool" : "build"
+                            "command" : "build",
+                            "name" : "build"
                           },
                           {
                             "arguments" : [
                               "myProduct.app"
                             ],
-                            "name" : "package",
-                            "tool" : "package"
+                            "command" : "package",
+                            "name" : "package"
                           }
                         ],
                         "test" : [
@@ -57,8 +57,8 @@ class ConfigurationTests: XCTestCase {
                             "arguments" : [
                               "myLibrary"
                             ],
-                            "name" : "testing",
-                            "tool" : "test"
+                            "command" : "test",
+                            "name" : "testing"
                           }
                         ]
                       },

@@ -13,24 +13,28 @@ public struct Configuration {
     public struct Phase {
         let value : [String:Any]
 
-        init(name: String, tool: String, arguments: [String]) {
-            self.value = ["name": name, "tool": tool, "arguments": arguments]
+        init(name: String, command: String, arguments: [String]) {
+            self.value = ["name": name, "command": command, "arguments": arguments]
         }
 
         public static func toolPhase(name: String, tool: String, arguments: [String]? = nil) -> Phase {
-            return Phase(name: name, tool: tool, arguments: arguments ?? [])
+            return Phase(name: name, command: tool, arguments: arguments ?? [])
         }
 
         public static func buildPhase(name: String, target: String, arguments: [String]? = nil) -> Phase {
-            return Phase(name: name, tool: "build", arguments: [target] + (arguments ?? []))
+            return Phase(name: name, command: "build", arguments: [target] + (arguments ?? []))
         }
 
         public static func testPhase(name: String, target: String, arguments: [String]? = nil) -> Phase {
-            return Phase(name: name, tool: "test", arguments: [target] + (arguments ?? []))
+            return Phase(name: name, command: "test", arguments: [target] + (arguments ?? []))
         }
 
         public static func actionPhase(name: String, action: String, arguments: [String]? = nil) -> Phase {
-            return Phase(name: name, tool: "action", arguments: [action] + (arguments ?? []))
+            return Phase(name: name, command: "action", arguments: [action] + (arguments ?? []))
+        }
+
+        public static func runPhase(name: String, action: String, arguments: [String]? = nil) -> Phase {
+            return Phase(name: name, command: "run", arguments: [action] + (arguments ?? []))
         }
 
     }
