@@ -28,11 +28,9 @@ class ConfigurationTests: XCTestCase {
         )
 
         let expected = """
-                  {
-                    "schemes" : {
-                      "build" : {
-                        "name" : "build",
-                        "phases" : [
+                    {
+                      "schemes" : {
+                        "build" : [
                           {
                             "arguments" : [
                               "Source\\/*.proto"
@@ -54,11 +52,8 @@ class ConfigurationTests: XCTestCase {
                             "name" : "package",
                             "tool" : "package"
                           }
-                        ]
-                      },
-                      "test" : {
-                        "name" : "test",
-                        "phases" : [
+                        ],
+                        "test" : [
                           {
                             "arguments" : [
                               "myProduct"
@@ -67,13 +62,12 @@ class ConfigurationTests: XCTestCase {
                             "tool" : "test"
                           }
                         ]
-                      }
-                    },
-                    "settings" : {
+                      },
+                      "settings" : {
 
+                      }
                     }
-                  }
-                  """
+                    """
 
         XCTAssertEqual(test.testJSON, expected)
 

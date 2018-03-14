@@ -25,14 +25,11 @@ public struct Configuration {
 
     public struct Scheme {
         let name : String
-        let value : [String:Any]
+        let value : [[String:Any]]
 
         init(name: String, phases: [Phase]) {
             self.name = name
-            self.value = [
-                "name": name,
-                "phases": phases.map { $0.value }
-            ]
+            self.value = phases.map { $0.value }
         }
 
         public static func scheme(name: String, phases: [Phase]) -> Scheme {
