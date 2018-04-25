@@ -4,6 +4,19 @@
 // For licensing terms, see http://elegantchaos.com/license/liberal/.
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+public struct Setting {
+  public let key: String
+  public let value: Any
+
+  var json : String { get { return asJSON(value: value, compact: true) } }
+  var testJSON : String { get { return asJSON(value: value, compact: false) } }
+
+  public static func setting(_ key: String, _ value: Any) -> Setting {
+    return Setting(key: key, value: value)
+  }
+
+}
+
 public struct Settings {
     public let value : [String:Any]
 
@@ -21,23 +34,26 @@ public struct Settings {
             self.value = info
         }
 
-        public static func scheme(name: String, filter: [String] = []) -> Inheritance {
+        public static func spec(name: String, filter: [String] = []) -> Inheritance {
             return Inheritance(name: name, filter: filter)
         }
     }
 
-    public struct Scheme {
-        let name : String
-        let value : [String:Any]
+    public struct Spec {
+        let name: String
+        let value: [String:Any]
 
-        init(name: String, common: [String]?, c: [String]?, cpp: [String]?, swift: [String]?, linker: [String]?, values: [String:String]?, inherits: [Inheritance]?) {
-            var info : [String:Any] = [:]
-            if common != nil { info["common"] = common }
-            if c != nil { info["c"] = c }
-            if cpp != nil { info["cpp"] = cpp }
-            if swift != nil { info["swift"] = swift }
-            if linker != nil { info["linker"] = linker }
-            if values != nil { info["values"] = values }
+        init(name: String, values: [Setting]?, inherits: [Inheritance]?) {
+            var info: [String:Any] = [:]
+
+            if let values = values {
+              var valueDict: [String:Any] = [:]
+              for value in values {
+                valueDict[value.key] = value.value
+              }
+              info["values"] = valueDict
+            }
+
             if let inherits = inherits {
                 info["inherits"] = inherits.map({ $0.value })
             }
@@ -46,38 +62,22 @@ public struct Settings {
             self.value = info
         }
 
-        public static func baseScheme(common: [String]? = nil,
-            c: [String]? = nil,
-            cpp: [String]? = nil,
-            swift: [String]? = nil,
-            linker: [String]? = nil,
-            inherits: [Inheritance]? = nil) -> Scheme {
-
-            return Scheme(name: "«base»", common: common, c: c, cpp: cpp, swift: swift, linker: linker, values: nil, inherits: inherits)
+        public static func base(values: [Setting], inherits: [Inheritance]? = nil) -> Spec {
+            return Spec(name: "«base»", values: values, inherits: inherits)
         }
 
-        public static func scheme(name: String,
-                                  common: [String]? = nil,
-                                  c: [String]? = nil,
-                                  cpp: [String]? = nil,
-                                  swift: [String]? = nil,
-                                  linker: [String]? = nil,
-                                  inherits: [Inheritance]? = nil) -> Scheme {
-            return Scheme(name: name, common: common, c: c, cpp: cpp, swift: swift, linker: linker, values: nil, inherits: inherits)
-        }
-
-        public static func scheme(name: String,
-                                  values: [String:String],
-                                  inherits: [Inheritance]? = nil) -> Scheme {
-            return Scheme(name: name, common: nil, c: nil, cpp: nil, swift: nil, linker: nil, values: values, inherits: inherits)
+        public static func spec(name: String,
+                                  values: [Setting],
+                                  inherits: [Inheritance]? = nil) -> Spec {
+            return Spec(name: name, values: values, inherits: inherits)
         }
 
     }
 
-    public init(schemes : [Scheme] = []) {
+    public init(specs : [Spec] = []) {
         var info : [String:Any] = [:]
-        for scheme in schemes {
-            info[scheme.name] = scheme.value
+        for spec in specs {
+            info[spec.name] = spec.value
         }
         self.value = info
     }
