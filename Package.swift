@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "BuilderConfiguration",
+    platforms: [
+        .macOS(.v10_13)
+    ],
     products: [
         .library(
             name: "BuilderConfiguration",
@@ -15,7 +18,7 @@ let package = Package(
     targets: [
         .target(
             name: "BuilderConfiguration",
-            dependencies: []),
+            dependencies: [.product(name: "builder", package: "Builder")]),
         .testTarget(
             name: "BuilderConfigurationTests",
             dependencies: ["BuilderConfiguration"]),
