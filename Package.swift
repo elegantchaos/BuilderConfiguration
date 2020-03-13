@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.2
 
 import PackageDescription
 
@@ -10,7 +10,7 @@ let package = Package(
             targets: ["BuilderConfiguration"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/elegantchaos/Builder.git", from: "1.1.1"),
+        .package(url: "https://github.com/elegantchaos/Builder.git", from: "1.2"),
     ],
     targets: [
         .target(
